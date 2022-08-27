@@ -12,6 +12,20 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+
+  #submit {
+    color: white;
+    background-color: #1e7e34;
+    border-color: #1c7430;
+    text-align: center;
+
+}
+  #trend-btn {
+    color: white;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    text-align: center;
+  }
     .giphy-img {
     width: 289px;
     height: 196px;
