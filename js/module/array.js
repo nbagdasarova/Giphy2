@@ -1,4 +1,4 @@
-export class BtnArray {
+export class _BtnArray {
   constructor(appJs) {
     this.appJs = appJs;
   }
