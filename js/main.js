@@ -1,17 +1,14 @@
 import { _Search } from "./module/search.js";
-import {_BtnArray} from "./module/array.js";
-import {searchArr} from "./common/common.js";
-import  {giphyKey} from "./common/common.js";
-
+import { _BtnArray } from "./module/array.js";
+import { searchArr } from "./common/common.js";
+import { giphyKey } from "./common/common.js";
 
 const submitBtn = document.querySelector("#submit");
 const inputText = document.querySelector("#input-text");
 const trendBtn = document.querySelector("#trend-btn");
 
-
 submitBtn.addEventListener("click", searchData);
 trendBtn.addEventListener("click", searchTrend);
-
 
 // fetch with given search value
 function searchGif(searchValue) {
@@ -47,18 +44,26 @@ async function searchTrend() {
 }
 
 // searched btn array
- let btnSearchList = new _BtnArray (searchArr);
- let list = btnSearchList.render();
+let btnSearchList = new _BtnArray(searchArr);
+let list = btnSearchList.render();
 
-console.log (btnSearchList.hot_button);
+// const hotBtn = document.getElementById("");
+// hotBtn.addEventListener("click", searchBtnData(hotBtn.value));
 
- export async function searchBtnData(value) {
-  var value = btnSearchList.hot_button;
-  let result = await searchGif(value);
-  result.data.forEach((data) => {
-    console.log(data.images.original.webp);
-    let img = new _BtnArray(result);
-    img.render();
-  });
-
+async function searchBtnData(value) {
+  let activBtn = document.getElementsByClassName("hot-buttons");
+  for (let i = 0; i < activBtn.length; i++) {
+    let value = activBtn[i].value;
+    let result = await searchGif(value);
+    result.data.forEach((data) => {
+      console.log(data.images.original.webp);
+      let img = new _Search(result);
+      img.render();
+    });
+  }
+}
+let activBtn = document.getElementsByClassName("hot-buttons");
+for (let i = 0; i < activBtn.length; i++) {
+  let elem = activBtn[i];
+  elem.addEventListener("click", searchBtnData);
 }
