@@ -1,4 +1,4 @@
-export class Search {
+export class _Search {
   constructor(appJs) {
     // super();
     this.appJs = appJs;
