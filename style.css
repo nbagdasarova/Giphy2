@@ -6,6 +6,20 @@
 
 .search-top-bar {
   text-align: center;
+  margin: 10px;
+}
+#buttons {
+  margin: 10px;
+}
+#hot-buttons {
+  margin: 3px;
+  height: 25px;
+  border-radius: 0.2rem;
+  text-align: center;
+  border: 1px solid transparent;
+}
+.search-bar {
+  margin: 10px;
 }
 .searched-giphy {
   margin-top: 20px;
