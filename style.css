@@ -11,7 +11,7 @@
 #buttons {
   margin: 10px;
 }
-#hot-buttons {
+.hot-buttons {
   margin: 3px;
   height: 25px;
   border-radius: 0.2rem;
