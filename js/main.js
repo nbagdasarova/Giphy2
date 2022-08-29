@@ -47,13 +47,7 @@ async function searchTrend() {
 let btnSearchList = new _BtnArray(searchArr);
 let list = btnSearchList.render();
 
-// const hotBtn = document.getElementById("");
-// hotBtn.addEventListener("click", searchBtnData(hotBtn.value));
-
 async function searchBtnData(value) {
-  // let activBtn = document.getElementsByClassName("hot-buttons");
-  // for (let i = 0; i < activBtn.length; i++) {
-  //   let value = activBtn[i].value;
   let result = await searchGif(value);
   result.data.forEach((data) => {
     console.log(data.images.original.webp);
