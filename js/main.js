@@ -51,19 +51,22 @@ let list = btnSearchList.render();
 // hotBtn.addEventListener("click", searchBtnData(hotBtn.value));
 
 async function searchBtnData(value) {
-  let activBtn = document.getElementsByClassName("hot-buttons");
-  for (let i = 0; i < activBtn.length; i++) {
-    let value = activBtn[i].value;
-    let result = await searchGif(value);
-    result.data.forEach((data) => {
-      console.log(data.images.original.webp);
-      let img = new _Search(result);
-      img.render();
-    });
-  }
+  // let activBtn = document.getElementsByClassName("hot-buttons");
+  // for (let i = 0; i < activBtn.length; i++) {
+  //   let value = activBtn[i].value;
+  let result = await searchGif(value);
+  result.data.forEach((data) => {
+    console.log(data.images.original.webp);
+    let img = new _Search(result);
+    img.render();
+  });
 }
+
 let activBtn = document.getElementsByClassName("hot-buttons");
 for (let i = 0; i < activBtn.length; i++) {
   let elem = activBtn[i];
-  elem.addEventListener("click", searchBtnData);
+
+  elem.addEventListener("click", () => {
+    searchBtnData(elem.value);
+  });
 }
